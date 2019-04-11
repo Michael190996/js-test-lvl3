@@ -1,0 +1,34 @@
+// Adaptation of the interface for different screen resolutions
+
+// Grid
+.grid-container {
+	display: table;
+	width: 100%;
+
+	padding-left: @indent-default;
+	padding-right: @indent-default;
+	
+	.box-sizing(border-box);
+}
+
+.grid-column {
+	padding-right: @indent-default;
+	padding-left: @indent-default;
+	margin-bottom: @indent-default*2;
+
+	.box-sizing(border-box);
+
+	&:not([class*="col-"]) { width: 100%; }
+	&:not([class="col-"]) { float: left; }
+
+	&.clearfix { clear: both; }
+}
+
+.grid-row { clear: both; }
+
+.col-30 { width: 30%; }
+.col-40 { width: 40%; }
+.col-50 { width: 50%; }
+.col-60 { width: 60%; }
+.col-70 { width: 70%; }
+.col-80 { width: 80%; }

@@ -1,0 +1,73 @@
+﻿- title = "Friends: List & Requests";
+
+html
+  include includes/head
+
+body.ui
+  include includes/navigation
+  div.page-wrapper: div.page
+    div.grid-container
+      div.grid-column.col-50
+        div.substrate
+          h1 Inbox
+
+          div.list-of-users: ul
+            li
+              a(href="/"): span Konstantin Konstantinov
+
+              div.control
+                button.clear
+                  i.fa.fa-check
+
+                button.clear
+                  i.fa.fa-times
+
+            li
+              a(href="/"): span Daniel Danilevsky
+
+              div.control
+                button.clear
+                  i.fa.fa-check
+
+                button.clear
+                  i.fa.fa-times
+
+      div.grid-column.col-50
+        div.substrate
+          h1 Outbox
+
+          div.list-of-users: ul
+            li
+              a(href="/"): span Nastassja Kotinskaya
+
+              div.control
+                button.clear
+                  i.fa.fa-times
+
+            li
+              a(href="/"): span Luba Ljubasha
+
+              div.control
+                button.clear
+                  i.fa.fa-times
+
+      div.grid-column
+        div.substrate
+          h1 My Friends
+
+          div.list-of-users: ul
+            li
+              a(href="/"): span Vladimir Zhirinovsky
+
+              div.control
+                button.clear
+                  i.fa.fa-times
+                  span Remove from friends
+
+            li
+              a(href="/"): span Vladimir Putin
+
+              div.control
+                button.clear
+                  i.fa.fa-times
+                  span Remove from friends

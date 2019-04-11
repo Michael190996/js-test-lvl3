@@ -1,0 +1,137 @@
+// Using iconic font designed Font Awesome
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic);
+@import "font-awesome/font-awesome.less";
+
+// Import variables (design parameters)
+
+@import "variables.less";
+
+
+// Global styles
+
+html, body { height: 100%; }
+
+body, input, textarea {
+	font-family: @font-family;
+	font-size: @font-size-default;
+}
+
+body {
+	margin: 0;
+
+	img { vertical-align: top; }
+
+	i { font-size: @icon-size-default; }
+
+	form { margin-bottom: 0; }
+
+	a:not(:hover) { text-decoration: none; }
+}
+
+// Gradient patterns
+
+.gradient-ltr (@color1, @color2) {
+	background: @color1;
+	background: linear-gradient(to bottom,  @color1 0%,@color2 100%);
+
+	background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%);
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 100%);
+	background: -o-linear-gradient(top,  @color1 0%,@color2 100%);	
+}
+
+.gradient-radial (@bgcolor, @color1, @color2) {
+	background: @bgcolor;
+	background: radial-gradient(ellipse at center, @color1 50%,@color2 100%);
+
+	background: -webkit-radial-gradient(center, ellipse cover, @color1 50%,@color2 100%);
+	background: -moz-radial-gradient(center, ellipse cover, @color1 50%, @color2 100%);
+	background: -o-radial-gradient(center, ellipse cover, @color1 50%,@color2 100%);
+}
+
+// Animation pattern
+
+.transition (@time){
+	transition: all @time ease-out;
+
+	-webkit-transition: all @time ease-out;
+	-moz-transition: all @time ease-out;
+	-o-transition: all @time ease-out;
+}
+
+// Trinagle pattern
+
+.trinagle (left, @size, @color) {
+	border-color: transparent @color transparent transparent;
+	border-width: @size/2 @size/2 @size/2 0;
+}
+
+.trinagle (right, @size, @color) {
+	border-color: transparent transparent transparent @color;
+	border-width: @size/2 0 @size/2 @size/2;
+}
+
+.trinagle (right-top, @size, @color) {
+	border-color: transparent @color transparent transparent;
+	border-width: 0 @size @size 0;
+}
+
+.trinagle (bottom, @size, @color) {
+	border-color: @color transparent transparent transparent;
+	border-width: @size/2 @size/2 0 @size/2;
+}
+
+.trinagle (top, @size, @color) {
+	border-color: transparent transparent @color transparent;
+	border-width: 0 @size/2 @size/2 @size/2;
+}
+
+.trinagle (@_, @size, @color) {
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+}
+
+// --
+
+
+// Table & Cell pattern
+
+.table {
+	display: table;
+
+	.row { display: table-row; }
+	.cell { display: table-cell; }
+}
+
+.pattern-cell {
+	display: table;
+
+	&>* {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+// Box model pattern
+
+.box-sizing(@model) {
+	box-sizing: @model;
+
+	-moz-box-sizing: @model;
+	-webkit-box-sizing: @model;
+}
+
+// User select pattern
+
+.user-select(@value) {
+	user-select: @value;
+
+	-ms-user-select: @value;
+	-moz-user-select: @value;
+	-khtml-user-select: @value;
+	-webkit-user-select: @value;
+}
+
+// Build interfaces
+
+@import "ui";

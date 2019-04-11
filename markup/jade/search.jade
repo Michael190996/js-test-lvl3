@@ -1,0 +1,29 @@
+﻿- title = "Search";
+
+html
+  include includes/head
+
+body.ui
+  include includes/navigation
+  div.page-wrapper: div.page
+    div.grid-container
+      div.grid-column.col-60
+        div.substrate
+          div.textbox.icon
+            i.fa.fa-search
+            input(type="text", placeholder="Enter your user name ...")
+
+          div.list-of-users: ul
+            li
+              a(href="/"): span Vladimir Zhirinovsky
+
+              div.control
+                button.clear
+                  i.fa.fa-times
+
+            li
+              a(href="/"): span James Bond
+
+              div.control
+                button.clear
+                  i.fa.fa-plus

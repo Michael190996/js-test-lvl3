@@ -1,0 +1,97 @@
+.substrate {
+	padding: @indent-default*2;
+
+	h1 {
+		margin-top: 0;
+		margin-bottom: @indent-default;
+	}
+
+	p {
+		margin-top: 0;
+
+		&:not(:last-child) {
+			margin-bottom: @indent-default;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.box-sizing(border-box);
+
+	.textbox:not(:last-child) { margin-bottom: @indent-default; }
+
+	&:not([class*="th-"]) {
+		background-color: @white-color-default;
+		border-radius: @border-radius-default;
+		color: @black-color-default;
+
+		box-shadow: @shadow-substrate;
+
+		h1 {
+			font-size: @font-size-medium;
+			font-weight: 600;
+
+			color: @gray-color-default;
+		}
+
+		a {
+			color: @blue-color-default;
+		}
+
+		.textbox {
+			i { color: @gray-color-default; }
+
+			input {
+				border-width: @border-width-default;
+				border-style: solid;
+
+				&:not(:focus) { border-color: lighten(@gray-color-default, 8%); }
+				&:focus { border-color: @gray-color-default; }
+			}
+		}
+	}
+}
+
+.navigation {
+	position: fixed;
+	left: 0;
+	top: 0;
+
+	height: 100%;
+	width: @navigation-size;
+
+	ul {
+		margin: @indent-default 0;
+		padding-left: 0;
+		list-style-type: none;
+
+		border-bottom: @border-width-default lighten(@blue-color-default, 8%) solid;
+		border-top: @border-width-default darken(@blue-color-default, 8%) solid;
+
+	}
+
+	&:not([class*="th-"]) {
+		background-color: @blue-color-default;
+
+		.active .button {
+			background-color: darken(@blue-color-default, 4%);
+		}
+
+		.button {
+			border-top: @border-width-default lighten(@blue-color-default, 8%) solid;
+			border-bottom: @border-width-default darken(@blue-color-default, 8%) solid;
+			color: @white-color-default;
+
+			width: 100%;
+		}
+	}
+}
+
+.page-wrapper {
+	padding-left: @navigation-size;
+	max-width: 1024px;
+
+	.page { padding-top: @indent-default*2; }
+}

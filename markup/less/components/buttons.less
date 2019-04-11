@@ -1,0 +1,94 @@
+// Prototype button
+
+.ui-button (@height: @button-height-default, @padding: @indent-default) {
+	&.rectangular {
+		border-radius: @border-radius-default/2;
+		padding: 0 @indent-default;
+		height: @height;
+
+		i:first-child { margin-right: @indent-small; }
+		i:last-child { margin-left: @indent-small; }
+	}
+
+	&.square {
+		border-radius: @border-radius-default/2;
+		height: @height;
+		width: @height;
+		padding: 0;
+	}
+
+	&.clear {
+		margin: 0;
+		padding: 0;
+
+		&::-moz-focus-inner { padding: none; }
+	}
+
+	&.green {
+		border: none;
+		
+		&:not([disabled]) {
+			background-color: @green-color-default;
+			color: @white-color-default;
+		}
+	}
+
+	&.blue-link {
+		border: none;
+
+		&:not([disabled]) {
+			background-color: transparent;
+			color: @blue-color-default;
+		}
+	}
+
+	span {
+		font-size: @font-size-default;
+		font-weight: 600;
+	}
+}
+
+// Description selector buttons parent interface
+
+button {
+	font-family: @font-family;
+
+	&:not([disabled]) { cursor: pointer; }
+	&[disabled] { cursor: default; }
+	
+	.ui-button ();
+}
+
+a.button {
+	display: inline-block;
+	
+	.box-sizing(border-box);
+	.ui-button ();
+
+	&.rectangular, &.square { line-height: @button-height-default; }
+	&:hover { text-decoration: none; }
+}
+
+div.button {
+	display: inline-block;
+	line-height: @button-height-default;
+	
+	position: relative;
+	overflow: hidden;
+
+	span { font-size: @font-size-default; }
+
+	input[type="file"] {
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		font-size: 100px;
+
+		opacity: 0;
+		cursor: pointer;
+	}
+
+	.box-sizing(border-box);
+	.ui-button ();
+}

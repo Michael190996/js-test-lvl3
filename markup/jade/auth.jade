@@ -1,0 +1,21 @@
+﻿- title = "Auth";
+
+html
+  include includes/head
+
+body.ui
+  div.pattern-cell.login: div
+    div.substrate
+      div.textbox: input(type="text", placeholder="Name")
+
+      div.textbox.icon
+        i.fa.fa-user
+        input(type="text", placeholder="Login")
+
+      div.textbox.icon
+        i.fa.fa-lock
+        input(type="password", placeholder="Password")
+
+      button.rectangular.green
+        i.fa.fa-sign-in
+        span Log In

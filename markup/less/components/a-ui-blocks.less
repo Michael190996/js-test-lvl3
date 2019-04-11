@@ -1,0 +1,41 @@
+.list-of-users {
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+		margin: 0;
+
+		li {
+			position: relative;
+			line-height: @button-height-default;
+			height: @button-height-default;
+
+			.control {
+				position: absolute;
+				right: 0;
+				top: 0;
+
+				font-size: 0;
+
+				i { margin-right: @indent-small; }
+
+				button { height: @button-height-default; }
+			}
+		}
+	}
+
+	&:not([class*="th-"]) {
+		li {
+			&:not(:last-child) {
+				border-bottom: @border-width-default lighten(@gray-color-default, 8%) dotted;
+			}
+		}
+
+		.control button {
+			background-color: transparent;
+			border: none;
+
+			&:not(:hover) { color: @gray-color-default; }
+			&:hover { color: @blue-color-default; }
+		}
+	}
+}

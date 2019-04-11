@@ -1,0 +1,101 @@
+.textbox {
+	position: relative;
+
+	&:not(.icon) input { padding: 0 @indent-default; }
+
+	&.icon {
+		&>i {
+			position: absolute;
+			line-height: @textbox-height-default;
+			width: @button-height-default;
+			text-align: center;
+		}
+
+		input {
+			padding-left: @button-height-default;
+			padding-right: @indent-default;
+		}
+	}
+
+	&:not(.save) {
+		&:not(.saved) {
+			.mark { display: none; }
+		}
+	}
+
+	&.save, &.saved {
+		.mark { display: block; }
+	}
+
+	textarea, input {
+		border-radius: @border-radius-default/2;
+		width: 100%;
+
+		.box-sizing(border-box);
+	}
+
+	textarea {
+		margin: 0;
+		padding-left: @indent-default;
+		padding-right: @indent-default;
+		resize: none;
+
+		&:not(.input) {
+			padding-top: @indent-default;
+			padding-bottom: @indent-default;
+		}
+
+		&.input {
+			padding-top: @textbox-height-default/4;
+			padding-bottom: @textbox-height-default/4;
+
+			height: @textbox-height-default;
+			line-height: @textbox-height-default/2;
+
+			overflow: hidden;
+		}
+	}
+
+	input {
+		height: @textbox-height-default;
+		font-weight: 600;
+	}
+
+	.toolbar {
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		button { border: none; }
+
+		span {
+			display: inline-block;
+			text-align: center;
+			cursor: help;
+
+			i {
+				line-height: @button-height-default;
+				margin-right: @indent-small;
+			}
+		}
+	}
+
+	.mark {
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		.background {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		i {
+			position: relative;
+			z-index: 1;
+
+			margin: @indent-small/2;
+		}
+	}
+}
