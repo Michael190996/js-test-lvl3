@@ -1,7 +1,7 @@
 import KoaRouter from 'koa-router';
 import mongoose from 'mongoose';
 import config from '../config/config';
-import {User, Profile, Applications} from '../models';
+import {User, Profile, Applications} from '../models/index';
 
 const router = new KoaRouter();
 

@@ -4,7 +4,7 @@ import koaBodyparser from 'koa-bodyparser';
 import KoaSessionMongoose from 'koa-session-mongoose';
 import koaSession from 'koa-session';
 import mongoose from 'mongoose';
-import router from './controllers/routes';
+import router from './routes/routes';
 import config from './config/config';
 
 export default (async () => {
