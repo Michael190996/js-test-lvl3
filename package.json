@@ -24,6 +24,6 @@
   },
   "scripts": {
     "start": "babel-node --presets es2015 src",
-    "test": "mocha --timeout=3000000 --compilers js:babel-core/register"
+    "test": "mocha --timeout=3000000 --require babel-core/register"
   }
 }
